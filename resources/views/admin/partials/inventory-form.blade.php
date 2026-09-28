@@ -1,0 +1,8 @@
+<div class="row g-2">
+<div class="col-md-3"><label class="form-label">Hospital / Blood Bank</label><select name="hospital_id" class="form-select"><option value="">Central / Unassigned</option>@foreach($hospitalRows as $h)<option value="{{ $h->id }}" @selected((string)old('hospital_id',$value?->hospital_id)===(string)$h->id)>{{ $h->hospital_name }} — {{ $h->city }}</option>@endforeach</select></div>
+<div class="col-md-2"><label class="form-label">Blood Group *</label><select name="blood_group" class="form-select">@foreach($groups as $g)<option value="{{ $g }}" @selected(old('blood_group',$value?->blood_group)===$g)>{{ $g }}</option>@endforeach</select></div>
+<div class="col-md-2"><label class="form-label">Units *</label><input type="number" min="0" name="units" class="form-control" required value="{{ old('units',$value?->units ?? 0) }}"></div>
+<div class="col-md-2"><label class="form-label">Storage Location</label><input name="storage_location" class="form-control" value="{{ old('storage_location',$value?->storage_location) }}"></div>
+<div class="col-md-1"><label class="form-label">Expiry</label><input type="date" name="expiry_date" class="form-control" value="{{ old('expiry_date',$value?->expiry_date?->format('Y-m-d')) }}"></div>
+<div class="col-md-2"><label class="form-label">Status</label><select name="status" class="form-select">@foreach(['available','reserved','expired'] as $s)<option value="{{ $s }}" @selected(old('status',$value?->status ?? 'available')===$s)>{{ ucfirst($s) }}</option>@endforeach</select></div>
+</div>
