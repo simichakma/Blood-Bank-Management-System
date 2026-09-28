@@ -552,24 +552,6 @@ Review `routes/web.php` and confirm that the relevant controllers and middleware
 
 ---
 
-## 🔐 Security Considerations
-
-For a reliable deployment:
-
-* Keep `.env` and other secret configuration files out of version control.
-* Disable debug mode in production.
-* Validate all user-submitted data.
-* Apply authorization checks to sensitive operations.
-* Protect state-changing web requests with CSRF protection.
-* Use Laravel's password hashing functionality.
-* Apply database backups and least-privilege database permissions.
-* Validate uploaded files and restrict file types and sizes.
-* Review donor information and patient data access carefully.
-
-**Important:** This application manages sensitive donor, hospital, and patient-related information. Production use should follow applicable privacy requirements and include appropriate security testing.
-
----
-
 ## 👨‍💻 Author
 
 **Simi Chakma**
